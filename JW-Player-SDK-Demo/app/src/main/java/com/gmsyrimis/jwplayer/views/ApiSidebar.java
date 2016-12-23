@@ -159,6 +159,7 @@ public class ApiSidebar extends LinearLayout {
         setupGetConfigBtn();
         setupGetVersionCode();
         setupGetMute();
+        setupGetControls();
         setupGetVisualQuality();
         setupCloseRelatedOverlay();
         setupOpenRelatedOverlay();
@@ -289,6 +290,16 @@ public class ApiSidebar extends LinearLayout {
             @Override
             public String setMessage() {
                 return "Mute: " + Boolean.toString(mPlayerView.getMute());
+            }
+        });
+    }
+
+    private void setupGetControls() {
+        Button getControls = (Button) findViewById(R.id.get_controls);
+        getControls.setOnClickListener(new ToastClickListener(mActivity, mDrawerLayout, mDrawerList) {
+            @Override
+            public String setMessage() {
+                return "Controls: " + Boolean.toString(mPlayerView.getControls());
             }
         });
     }

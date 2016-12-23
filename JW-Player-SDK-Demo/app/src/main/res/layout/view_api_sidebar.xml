@@ -522,6 +522,11 @@
                 android:text="get Mute" />
 
             <Button
+                android:id="@+id/get_controls"
+                style="@style/Text.ApiButtons"
+                android:text="get controls" />
+
+            <Button
                 android:id="@+id/get_visual_quality"
                 style="@style/Text.ApiButtons"
                 android:text="get VisualQuality" />
