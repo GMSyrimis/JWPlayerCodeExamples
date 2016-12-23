@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/BackgroundLayout"
+    android:orientation="vertical"
+    tools:context="com.gmsyrimis.jwplayer.activities.RelatedActivity">
+
+    <LinearLayout
+        style="@style/ScrollLayout"
+        android:orientation="vertical">
+
+        <LinearLayout
+            style="@style/FieldContainer"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/Text.FieldLabel"
+                android:text="File:" />
+
+            <EditText
+                android:id="@+id/related_file_et"
+                style="@style/FieldPayload"
+                android:hint="file"
+                android:inputType="text" />
+
+            <Button
+                android:id="@+id/related_file_qr"
+                style="@style/SquareButton.Qr" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/FieldContainer"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/Text.FieldLabel"
+                android:text="Heading:" />
+
+            <EditText
+                android:id="@+id/related_heading_et"
+                style="@style/FieldPayload"
+                android:hint="heading"
+                android:inputType="text" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/FieldContainer"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/Text.FieldLabel"
+                android:text="Autoplay Message:" />
+
+            <EditText
+                android:id="@+id/related_autoplay_message_et"
+                style="@style/FieldPayload"
+                android:hint="message"
+                android:inputType="text" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/FieldContainer"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/Text.FieldLabel"
+                android:text="Timer:" />
+
+            <EditText
+                android:id="@+id/related_autoplay_timer_et"
+                style="@style/FieldPayload"
+                android:hint="timer"
+                android:inputType="number" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/FieldContainer"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/Text.FieldLabel"
+                android:text="On Complete:" />
+
+            <Spinner
+                android:id="@+id/related_on_complete_spinner"
+                style="@style/FieldPayload" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/related_save_btn"
+        style="@style/Text.Buttons.End"
+        android:text="save" />
+
+</LinearLayout>

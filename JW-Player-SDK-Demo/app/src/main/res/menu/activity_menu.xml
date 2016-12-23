@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/share_player_config"
+        android:icon="@drawable/share_btn"
+        android:title="share"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/edit_player_config"
+        android:icon="@drawable/edit_btn"
+        android:title="config"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/media_route_menu_item"
+        android:title="cast"
+        app:actionProviderClass="android.support.v7.app.MediaRouteActionProvider"
+        app:showAsAction="always" />
+
+</menu>

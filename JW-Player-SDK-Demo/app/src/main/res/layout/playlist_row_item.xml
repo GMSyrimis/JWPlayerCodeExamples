@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:padding="5dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/playlist_row_count"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Playlist item: "
+        android:layout_margin="5dp"/>
+
+    <RelativeLayout
+        android:id="@+id/root_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/playlist_item_border">
+
+
+        <LinearLayout
+            android:id="@+id/playlist_row_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/playlist_row_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Title:"
+                    android:textColor="#000000"
+                    android:textSize="22sp" />
+
+                <TextView
+                    android:id="@+id/playlist_row_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:text="Description:"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/playlist_row_mediaid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MediaID:"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <CheckedTextView
+                    android:id="@+id/playlist_row_ads_check"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checkMark="?android:attr/textCheckMark"
+                    android:checked="false"
+                    android:text="Ads"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:textSize="14sp" />
+
+                <CheckedTextView
+                    android:id="@+id/playlist_row_captions_check"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checkMark="?android:attr/textCheckMark"
+                    android:checked="false"
+                    android:text="Captions"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:textSize="14sp" />
+
+                <CheckedTextView
+                    android:id="@+id/playlist_row_multisource_check"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checkMark="?android:attr/textCheckMark"
+                    android:checked="false"
+                    android:text="Sources"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <ImageView
+            android:id="@+id/playlist_row_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha=".5"
+            android:scaleType="fitXY"
+            android:src="@drawable/playvideo" />
+    </RelativeLayout>
+</LinearLayout>

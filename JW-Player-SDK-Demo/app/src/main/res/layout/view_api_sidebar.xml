@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="240dp"
+    android:layout_height="match_parent"
+    android:layout_gravity="start"
+    android:choiceMode="singleChoice"
+    android:divider="@android:color/transparent"
+    android:dividerHeight="0dp"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/Text.ContainerTitle"
+                android:text="play()" />
+
+            <LinearLayout
+                style="@style/FieldContainer.Api"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/play_spinner"
+                    style="@style/FieldPayload" />
+
+                <Button
+                    android:id="@+id/play_spinner_go"
+                    style="@style/SquareButton.Go" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/Text.ContainerTitle"
+                android:text="pause()" />
+
+            <LinearLayout
+                style="@style/FieldContainer.Api"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/pause_spinner"
+                    style="@style/FieldPayload" />
+
+                <Button
+                    android:id="@+id/pause_spinner_go"
+                    style="@style/SquareButton.Go" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/clear_skin_config_btn"
+                style="@style/Text.ApiButtons"
+                android:layout_marginTop="10dp"
+                android:text="stop()" />
+
+            <!--<Button-->
+            <!--android:id="@+id/on_pause_btn"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="onPause()" />-->
+
+            <!--<Button-->
+            <!--android:id="@+id/on_resume_btn"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="onResume()" />-->
+
+            <!--<Button-->
+            <!--android:id="@+id/on_destroy_btn"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="onDestroy()" />-->
+
+            <TextView
+                style="@style/Text.ContainerTitle"
+                android:text="load()" />
+
+            <LinearLayout
+                style="@style/FieldContainer.Api"
+                android:orientation="vertical">
+
+                <LinearLayout style="@style/SpinnerHeaderContainer">
+
+                    <Button
+                        android:id="@+id/load_qr"
+                        style="@style/SquareButton.Qr" />
+
+                    <Button
+                        android:id="@+id/load_lcl"
+                        style="@style/SquareButton.Lcl" />
+
+                    <Button
+                        android:id="@+id/load_add"
+                        style="@style/SquareButton.Add" />
+
+                    <Button
+                        android:id="@+id/load_edit"
+                        style="@style/SquareButton.Edit" />
+
+                    <Button
+                        android:id="@+id/load_remove"
+                        style="@style/SquareButton.Remove" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.gmsyrimis.jwplayer.views.JWSpinner
+                        android:id="@+id/load_spinner"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1" />
+
+                    <Button
+                        android:id="@+id/load_go"
+                        style="@style/SquareButton.Go" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <TextView
+                style="@style/Text.ContainerTitle"
+                android:text="setup()" />
+
+            <LinearLayout
+                style="@style/FieldContainer.Api"
+                android:orientation="vertical">
+
+                <LinearLayout style="@style/SpinnerHeaderContainer">
+
+                    <Button
+                        android:id="@+id/player_config_add"
+                        style="@style/SquareButton.Add" />
+
+                    <Button
+                        android:id="@+id/player_config_edit"
+                        style="@style/SquareButton.Edit" />
+
+                    <Button
+                        android:id="@+id/player_config_remove"
+                        style="@style/SquareButton.Remove" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.gmsyrimis.jwplayer.views.JWSpinner
+                        android:id="@+id/player_config_spinner"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1" />
+
+                    <Button
+                        android:id="@+id/player_config_go"
+                        style="@style/SquareButton.Go" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <TextView
+                style="@style/Text.ContainerTitle"
+                android:text="playAd()" />
+
+            <LinearLayout
+                style="@style/FieldContainer.Api"
+                android:orientation="vertical">
+
+                <LinearLayout style="@style/SpinnerHeaderContainer">
+
+                    <Button
+                        android:id="@+id/play_ad_qr"
+                        style="@style/SquareButton.Qr" />
+
+                    <Button
+                        android:id="@+id/play_ad_add"
+                        style="@style/SquareButton.Add" />
+
+                    <Button
+                        android:id="@+id/play_ad_edit"
+                        style="@style/SquareButton.Edit" />
+
+                    <Button
+                        android:id="@+id/play_ad_remove"
+                        style="@style/SquareButton.Remove" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.gmsyrimis.jwplayer.views.JWSpinner
+                        android:id="@+id/play_ad_spinner"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1" />
+
+                    <Button
+                        android:id="@+id/play_ad_go"
+                        style="@style/SquareButton.Go" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <TextView
+                style="@style/Text.ContainerTitle"
+                android:text="setSkin(Skin)" />
+
+            <LinearLayout
+                style="@style/FieldContainer.Api"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/skin_skin_spinner"
+                    style="@style/FieldPayload" />
+
+                <Button
+                    android:id="@+id/skin_skin_go"
+                    style="@style/SquareButton.Go" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/Text.ContainerTitle"
+                android:text="setSkin(String url)" />
+
+            <LinearLayout
+                style="@style/FieldContainer.Api"
+                android:orientation="vertical">
+
+                <LinearLayout style="@style/SpinnerHeaderContainer">
+
+                    <Button
+                        android:id="@+id/set_skin_string_qr"
+                        style="@style/SquareButton.Qr" />
+
+                    <Button
+                        android:id="@+id/set_skin_string_lcl"
+                        style="@style/SquareButton.Lcl" />
+
+                    <Button
+                        android:id="@+id/set_skin_string_add"
+                        style="@style/SquareButton.Add" />
+
+                    <Button
+                        android:id="@+id/set_skin_string_edit"
+                        style="@style/SquareButton.Edit" />
+
+                    <Button
+                        android:id="@+id/set_skin_string_remove"
+                        style="@style/SquareButton.Remove" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.gmsyrimis.jwplayer.views.JWSpinner
+                        android:id="@+id/set_skin_string_spinner"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1" />
+
+                    <Button
+                        android:id="@+id/set_skin_string_go"
+                        style="@style/SquareButton.Go" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <TextView
+                style="@style/Text.ContainerTitle"
+                android:text="setControls()" />
+
+            <LinearLayout
+                style="@style/FieldContainer.Api"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/set_controls_check"
+                    style="@style/Text.CheckBox.ResponsiveHorizontal"
+                    android:text="setControls" />
+
+                <Button
+                    android:id="@+id/set_controls_go"
+                    style="@style/SquareButton.Go" />
+
+            </LinearLayout>
+
+            <TextView
+                style="@style/Text.ContainerTitle"
+                android:text="setMute()" />
+
+            <LinearLayout
+                style="@style/FieldContainer.Api"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/set_mute_check"
+                    style="@style/Text.CheckBox.ResponsiveHorizontal"
+                    android:text="setMute" />
+
+                <Button
+                    android:id="@+id/set_mute_go"
+                    style="@style/SquareButton.Go" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/Text.ContainerTitle"
+                android:text="setBackgroundAudio()" />
+
+            <LinearLayout
+                style="@style/FieldContainer.Api"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/set_background_audio_check"
+                    style="@style/Text.CheckBox.ResponsiveHorizontal"
+                    android:text="setBackgroundAudio" />
+
+                <Button
+                    android:id="@+id/set_background_audio_go"
+                    style="@style/SquareButton.Go" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/Text.ContainerTitle"
+                android:text="setFullscren()" />
+
+            <LinearLayout
+                style="@style/FieldContainer.Api"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/set_fullscreen_check"
+                    style="@style/Text.CheckBox.ResponsiveHorizontal"
+                    android:text="Full Screen" />
+
+                <CheckBox
+                    android:id="@+id/allow_rotation_check"
+                    style="@style/Text.CheckBox.ResponsiveHorizontal"
+                    android:text="Allow Rotation" />
+
+                <Button
+                    android:id="@+id/set_fullscreen_go"
+                    style="@style/SquareButton.Go" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/Text.ContainerTitle"
+                android:text="seek()" />
+
+            <LinearLayout
+                style="@style/FieldContainer.Api"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/seek_et"
+                    style="@style/FieldPayload"
+                    android:hint="seek(milliseconds)"
+                    android:inputType="number" />
+
+                <Button
+                    android:id="@+id/seek_go"
+                    style="@style/SquareButton.Go" />
+
+            </LinearLayout>
+
+            <TextView
+                style="@style/Text.ContainerTitle"
+                android:text="playlistItem()" />
+
+            <LinearLayout
+                style="@style/FieldContainer.Api"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/play_list_item_et"
+                    style="@style/FieldPayload"
+                    android:hint="index"
+                    android:inputType="number" />
+
+                <Button
+                    android:id="@+id/play_list_item_go"
+                    style="@style/SquareButton.Go" />
+
+            </LinearLayout>
+
+            <TextView
+                style="@style/Text.ContainerTitle"
+                android:text="setCurrentAudioTrack()" />
+
+            <LinearLayout
+                style="@style/FieldContainer.Api"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/set_current_audio_track_et"
+                    style="@style/FieldPayload"
+                    android:hint="index"
+                    android:inputType="number" />
+
+                <Button
+                    android:id="@+id/set_current_audio_track_go"
+                    style="@style/SquareButton.Go" />
+
+            </LinearLayout>
+
+            <TextView
+                style="@style/Text.ContainerTitle"
+                android:text="setCurrentCaptions()" />
+
+            <LinearLayout
+                style="@style/FieldContainer.Api"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/set_current_captions_et"
+                    style="@style/FieldPayload"
+                    android:hint="index"
+                    android:inputType="number" />
+
+                <Button
+                    android:id="@+id/set_current_captions_go"
+                    style="@style/SquareButton.Go" />
+
+            </LinearLayout>
+
+            <TextView
+                style="@style/Text.ContainerTitle"
+                android:text="setCurrentQuality()" />
+
+            <LinearLayout
+                style="@style/FieldContainer.Api"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/set_current_quality_et"
+                    style="@style/FieldPayload"
+                    android:hint="index"
+                    android:inputType="number" />
+
+                <Button
+                    android:id="@+id/set_current_quality_go"
+                    style="@style/SquareButton.Go" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/get_state_btn"
+                style="@style/Text.ApiButtons"
+                android:layout_marginTop="10dp"
+                android:text="get State" />
+
+            <Button
+                android:id="@+id/get_current_audio_track_btn"
+                style="@style/Text.ApiButtons"
+                android:text="get Current Audio Track" />
+
+            <Button
+                android:id="@+id/get_current_quality_btn"
+                style="@style/Text.ApiButtons"
+                android:text="get Current Quality" />
+
+            <Button
+                android:id="@+id/get_current_captions_btn"
+                style="@style/Text.ApiButtons"
+                android:text="get Current Captions" />
+
+            <Button
+                android:id="@+id/get_playlist_index_btn"
+                style="@style/Text.ApiButtons"
+                android:text="get Playlist Index" />
+
+            <Button
+                android:id="@+id/get_fullscreen_btn"
+                style="@style/Text.ApiButtons"
+                android:text="get Fullscreen" />
+
+            <Button
+                android:id="@+id/get_duration_btn"
+                style="@style/Text.ApiButtons"
+                android:text="get Duration" />
+
+            <Button
+                android:id="@+id/get_position_btn"
+                style="@style/Text.ApiButtons"
+                android:text="get Position" />
+
+            <Button
+                android:id="@+id/get_audio_tracks_btn"
+                style="@style/Text.ApiButtons"
+                android:text="get AudioTracks" />
+
+            <Button
+                android:id="@+id/get_captions_list_btn"
+                style="@style/Text.ApiButtons"
+                android:text="get Captions List" />
+
+            <Button
+                android:id="@+id/get_quality_levels_btn"
+                style="@style/Text.ApiButtons"
+                android:text="get Quality Levels" />
+
+            <Button
+                android:id="@+id/get_playlist_btn"
+                style="@style/Text.ApiButtons"
+                android:text="get Playlist" />
+
+            <Button
+                android:id="@+id/get_player_config"
+                style="@style/Text.ApiButtons"
+                android:text="get Config" />
+
+            <Button
+                android:id="@+id/get_version_code"
+                style="@style/Text.ApiButtons"
+                android:text="get Version Code" />
+
+            <Button
+                android:id="@+id/get_mute"
+                style="@style/Text.ApiButtons"
+                android:text="get Mute" />
+
+            <Button
+                android:id="@+id/get_visual_quality"
+                style="@style/Text.ApiButtons"
+                android:text="get VisualQuality" />
+
+            <Button
+                android:id="@+id/close_related_overlay"
+                style="@style/Text.ApiButtons"
+                android:text="close related overlay" />
+
+            <Button
+                android:id="@+id/open_related_overlay"
+                style="@style/Text.ApiButtons"
+                android:text="open related overlay" />
+
+            <Button
+                android:id="@+id/destroy_surface"
+                style="@style/Text.ApiButtons"
+                android:text="destroy surface" />
+
+            <Button
+                android:id="@+id/initialize_surface"
+                style="@style/Text.ApiButtons"
+                android:text="initialize surface" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</merge>

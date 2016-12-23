@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/BackgroundLayout"
+    android:orientation="vertical"
+    tools:context=".activities.LogoActivity">
+
+    <LinearLayout
+        style="@style/ScrollLayout"
+        android:orientation="vertical">
+
+        <LinearLayout
+            style="@style/FieldContainer"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/Text.FieldLabel"
+                android:text="Logo File:" />
+
+            <EditText
+                android:id="@+id/related_file_et"
+                style="@style/FieldPayload"
+                android:hint="file"
+                android:inputType="text" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/FieldContainer"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/Text.FieldLabel"
+                android:text="Logo Link:" />
+
+            <EditText
+                android:id="@+id/logo_link_et"
+                style="@style/FieldPayload"
+                android:hint="link"
+                android:inputType="text" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            style="@style/FieldContainer"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/Text.FieldLabel"
+                android:text="Logo Margin:" />
+
+            <EditText
+                android:id="@+id/logo_margin_et"
+                style="@style/FieldPayload"
+                android:hint="margin"
+                android:inputType="number" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/FieldContainer"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/Text.FieldLabel"
+                android:text="Logo Position:" />
+
+            <Spinner
+                android:id="@+id/related_on_complete_spinner"
+                style="@style/FieldPayload" />
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/logo_hide_check"
+            style="@style/Text.CheckBox"
+            android:text="Logo Hide" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/logo_save_btn"
+        style="@style/Text.Buttons.End"
+        android:text="save" />
+</LinearLayout>

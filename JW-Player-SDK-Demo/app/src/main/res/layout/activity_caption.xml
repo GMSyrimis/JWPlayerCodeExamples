@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/BackgroundLayout"
+    android:orientation="vertical">
+
+    <ScrollView style="@style/ScrollLayout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                style="@style/FieldContainer"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/Text.FieldLabel"
+                    android:text="File:" />
+
+                <EditText
+                    android:id="@+id/caption_file_et"
+                    style="@style/FieldPayload"
+                    android:hint=".setFile()"
+                    android:inputType="text" />
+
+                <Button
+                    android:id="@+id/caption_file_qr"
+                    style="@style/SquareButton.Qr" />
+
+                <Button
+                    android:id="@+id/caption_file_lcl"
+                    style="@style/SquareButton.Lcl" />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/FieldContainer"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/Text.FieldLabel"
+                    android:text="Label:" />
+
+                <EditText
+                    android:id="@+id/caption_label_et"
+                    style="@style/FieldPayload"
+                    android:hint=".setLabel()"
+                    android:inputType="text" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                style="@style/FieldContainer"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/Text.FieldLabel"
+                    android:text="Kind:" />
+
+                <Spinner
+                    android:id="@+id/caption_kind_spinner"
+                    style="@style/FieldPayload" />
+
+            </LinearLayout>
+
+
+            <CheckBox
+                android:id="@+id/caption_default_spinner"
+                style="@style/Text.CheckBox"
+                android:text="isDefault" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/caption_new_btn"
+            style="@style/Text.Buttons.Responsive"
+            android:text="new"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/caption_add_btn"
+            style="@style/Text.Buttons.Responsive"
+            android:text="Add" />
+
+        <Button
+            android:id="@+id/caption_commit_btn"
+            style="@style/Text.Buttons.Responsive"
+            android:text="Commit"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/caption_edit_btn"
+            style="@style/Text.Buttons.Responsive"
+            android:text="edit"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/caption_load_list"
+            style="@style/Text.Buttons.Responsive"
+            android:text="load list" />
+
+        <Button
+            android:id="@+id/caption_save_list"
+            style="@style/Text.Buttons.Responsive"
+            android:text="save list" />
+
+        <Button
+            android:id="@+id/caption_clear_list"
+            style="@style/Text.Buttons.Responsive"
+            android:text="clear list" />
+
+    </LinearLayout>
+
+    <TextView
+        style="@style/Text.ContainerTitle"
+        android:text="Captions List:" />
+
+    <ListView
+        android:id="@+id/caption_list_view"
+        style="@style/ScrollLayout">
+
+    </ListView>
+
+    <Button
+        android:id="@+id/caption_set_list"
+        style="@style/Text.Buttons.End"
+        android:text="set captions" />
+
+</LinearLayout>

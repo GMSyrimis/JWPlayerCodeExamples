@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              style="@style/BackgroundLayout"
+              android:orientation="vertical">
+
+    <ScrollView
+        style="@style/ScrollLayout"
+        android:layout_width="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                style="@style/FieldContainer"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/Text.FieldLabel"
+                    android:text="File:"/>
+
+                <EditText
+                    android:id="@+id/mediasource_file_et"
+                    style="@style/FieldPayload"
+                    android:hint=".setFile()"
+                    android:inputType="text"/>
+
+                <Button
+                    android:id="@+id/mediasource_file_qr"
+                    style="@style/SquareButton.Qr"/>
+
+                <Button
+                    android:id="@+id/mediasource_file_lcl"
+                    style="@style/SquareButton.Lcl"/>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/FieldContainer"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/Text.FieldLabel"
+                    android:text="Label:"/>
+
+                <EditText
+                    android:id="@+id/mediasource_label_et"
+                    style="@style/FieldPayload"
+                    android:hint=".setLabel()"
+                    android:inputType="text"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                style="@style/FieldContainer"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/Text.FieldLabel"
+                    android:text="Type:"/>
+
+                <Spinner
+                    android:id="@+id/mediasource_type_spinner"
+                    style="@style/FieldPayload"/>
+
+            </LinearLayout>
+
+            <com.gmsyrimis.jwplayer.views.HttpHeadersView
+                android:id="@+id/mediasource_http_headers_view"
+                style="@style/FieldContainer"
+                android:orientation="vertical"/>
+
+
+            <LinearLayout
+                style="@style/FieldContainer"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/mediasource_default_check"
+                    style="@style/Text.CheckBox"
+                    android:text="isDefault"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/mediasource_new_btn"
+            style="@style/Text.Buttons.Responsive"
+            android:text="new"
+            android:visibility="gone"/>
+
+        <Button
+            android:id="@+id/mediasource_add_btn"
+            style="@style/Text.Buttons.Responsive"
+            android:text="Add"/>
+
+        <Button
+            android:id="@+id/mediasource_commit_btn"
+            style="@style/Text.Buttons.Responsive"
+            android:text="Commit"
+            android:visibility="gone"/>
+
+        <Button
+            android:id="@+id/mediasource_edit_btn"
+            style="@style/Text.Buttons.Responsive"
+            android:text="edit"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/mediasource_load_list"
+            style="@style/Text.Buttons.Responsive"
+            android:text="load list"/>
+
+        <Button
+            android:id="@+id/mediasource_save_list"
+            style="@style/Text.Buttons.Responsive"
+            android:text="save list"/>
+
+        <Button
+            android:id="@+id/mediasource_clear_list"
+            style="@style/Text.Buttons.Responsive"
+            android:text="clear list"/>
+
+    </LinearLayout>
+
+
+    <ListView
+        android:id="@+id/mediasource_list_view"
+        style="@style/ScrollLayout">
+
+    </ListView>
+
+    <Button
+        android:id="@+id/mediasource_set_list"
+        style="@style/Text.Buttons.End"
+        android:text="set sources"/>
+
+</LinearLayout>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/FieldContainer"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/Text.ContainerTitle"
+        android:text="Http Headers:"/>
+
+    <LinearLayout
+        android:id="@+id/http_headers_container"
+        style="@style/FieldContainer"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            style="@style/FieldContainer"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/http_headers_key"
+                    style="@style/FieldPayload"
+                    android:hint="key"
+                    android:inputType="text"/>
+
+                <Button
+                    android:id="@+id/http_headers_key_qr"
+                    style="@style/SquareButton.Qr"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/http_headers_value"
+                    style="@style/FieldPayload"
+                    android:hint="value"
+                    android:inputType="text"/>
+
+                <Button
+                    android:id="@+id/http_headers_value_qr"
+                    style="@style/SquareButton.Qr"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/http_headers_remove"
+                style="@style/SquareButton.Remove"/>
+
+            <Button
+                android:id="@+id/http_headers_add"
+                style="@style/SquareButton.Add"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+</merge>

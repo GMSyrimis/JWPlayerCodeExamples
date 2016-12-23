@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              style="@style/BackgroundLayout"
+              android:orientation="vertical"
+              tools:context=".activities.PlayerConfigActivity">
+
+    <ScrollView style="@style/ScrollLayout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                style="@style/FieldContainer"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/Text.FieldLabel"
+                    android:text="License Key"/>
+
+                <EditText
+                    android:id="@+id/set_license_key_et"
+                    style="@style/FieldPayload"
+                    android:hint="license key"
+                    android:inputType="text"/>
+
+                <Button
+                    android:id="@+id/set_license_key_qr"
+                    style="@style/SquareButton.Qr"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/FieldContainer"
+                android:orientation="vertical">
+
+                <LinearLayout style="@style/SpinnerHeaderContainer">
+
+                    <TextView
+                        style="@style/Text.SpinnerTitle"
+                        android:text="File:"/>
+
+                    <Button
+                        android:id="@+id/config_jw_spinner_qr"
+                        style="@style/SquareButton.Qr"/>
+
+                    <Button
+                        android:id="@+id/config_jw_spinner_lcl"
+                        style="@style/SquareButton.Lcl"/>
+
+                    <Button
+                        android:id="@+id/config_jw_spinner_add"
+                        style="@style/SquareButton.Add"/>
+
+                    <Button
+                        android:id="@+id/config_jw_spinner_edit"
+                        style="@style/SquareButton.Edit"/>
+
+                    <Button
+                        android:id="@+id/config_jw_spinner_remove"
+                        style="@style/SquareButton.Remove"/>
+                </LinearLayout>
+
+                <com.gmsyrimis.jwplayer.views.JWSpinner
+                    android:id="@+id/config_jw_file_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_margin="5dp"/>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/config_playlist"
+                style="@style/Text.Buttons"
+                android:text="Playlist"/>
+
+            <LinearLayout
+                style="@style/FieldContainer"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/Text.FieldLabel"
+                    android:text="Stretching:"/>
+
+                <Spinner
+                    android:id="@+id/stretching_spinner"
+                    style="@style/FieldPayload"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/FieldContainer"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/config_autostart"
+                        style="@style/Text.CheckBox.ResponsiveHorizontal"
+                        android:text="Autostart"/>
+
+                    <CheckBox
+                        android:id="@+id/config_repeat"
+                        style="@style/Text.CheckBox.ResponsiveHorizontal"
+                        android:text="Repeat"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/config_controls"
+                        style="@style/Text.CheckBox.ResponsiveHorizontal"
+                        android:text="Controls"/>
+
+                    <CheckBox
+                        android:id="@+id/config_mute"
+                        style="@style/Text.CheckBox.ResponsiveHorizontal"
+                        android:text="Mute"/>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/config_related"
+                style="@style/Text.Buttons"
+                android:text="Related"/>
+
+            <LinearLayout
+                style="@style/FieldContainer"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/Text.ContainerTitle"
+                    android:text="Playlist Advertising:"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/config_advertising_vast"
+                        style="@style/Text.Buttons.Responsive"
+                        android:text="Vast"/>
+
+                    <Button
+                        android:id="@+id/config_advertising_ima"
+                        style="@style/Text.Buttons.Responsive"
+                        android:text="ima"/>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/config_captions"
+                style="@style/Text.Buttons"
+                android:text="Caption Styling"/>
+
+            <Button
+                android:id="@+id/config_skin"
+                style="@style/Text.Buttons"
+                android:text="Skin"/>
+
+            <Button
+                android:id="@+id/config_logo"
+                style="@style/Text.Buttons"
+                android:text="Logo"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/player_config_save"
+        style="@style/Text.Buttons.End"
+        android:text="Setup"/>
+
+</LinearLayout>

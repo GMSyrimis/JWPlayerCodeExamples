@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/BackgroundLayout"
+    android:orientation="vertical"
+    tools:context=".activities.VastAdvertisingActivity">
+
+
+    <ScrollView style="@style/ScrollLayout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                style="@style/FieldContainer"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/Text.FieldLabel"
+                    android:text="AdSource:" />
+
+                <Spinner
+                    android:id="@+id/advertising_ad_source"
+                    style="@style/FieldPayload" />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/FieldContainer"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/Text.FieldLabel"
+                    android:text="Skip Offset:" />
+
+                <EditText
+                    android:id="@+id/advertising_skip_offset"
+                    style="@style/FieldPayload"
+                    android:hint="setSkipOffset()"
+                    android:inputType="number" />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/FieldContainer"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/Text.FieldLabel"
+                    android:text="Skip Text:" />
+
+                <EditText
+                    android:id="@+id/advertising_skip_text"
+                    style="@style/FieldPayload"
+                    android:hint="setSkipText()"
+                    android:inputType="text" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                style="@style/FieldContainer"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/Text.FieldLabel"
+                    android:text="Skip Message:" />
+
+                <EditText
+                    android:id="@+id/advertising_skip_message"
+                    style="@style/FieldPayload"
+                    android:hint="setSkipMessage()"
+                    android:inputType="text" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                style="@style/FieldContainer"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/Text.FieldLabel"
+                    android:text="Cue Text:" />
+
+                <EditText
+                    android:id="@+id/advertising_cue_text"
+                    style="@style/FieldPayload"
+                    android:hint="setCueText()"
+                    android:inputType="text" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/FieldContainer"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/Text.FieldLabel"
+                    android:text="Ad Message:" />
+
+                <EditText
+                    android:id="@+id/advertising_ad_message"
+                    style="@style/FieldPayload"
+                    android:hint="setAdMessage()"
+                    android:inputType="text" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/FieldContainer"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/Text.FieldLabel"
+                    android:text="VMAP Ad Url:" />
+
+                <EditText
+                    android:id="@+id/advertising_vmap_url"
+                    style="@style/FieldPayload"
+                    android:hint="VMAP url"
+                    android:inputType="text" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/advertising_edit_ad_schedule"
+        style="@style/Text.Buttons.Center"
+        android:text="edit Ad Schedule" />
+
+    <TextView
+        style="@style/Text.ContainerTitle"
+        android:text="Current Ad Schedule:" />
+
+    <ListView
+        android:id="@+id/advertising_ad_schedule_lv"
+        style="@style/ScrollLayout"></ListView>
+
+    <Button
+        android:id="@+id/advertising_set_advertising"
+        style="@style/Text.Buttons.End"
+        android:text="set advertising" />
+
+
+</LinearLayout>

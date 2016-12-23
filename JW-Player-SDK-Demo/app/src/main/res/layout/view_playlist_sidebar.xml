@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="match_parent"
+    android:layout_gravity="start"
+    android:background="#f3f3f3"
+    android:choiceMode="singleChoice"
+    android:divider="@android:color/transparent"
+    android:dividerHeight="0dp"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/playlistitem_load_list"
+            style="@style/Text.Buttons.Responsive"
+            android:text="load list"
+            android:textSize="11sp"/>
+
+        <Button
+            android:id="@+id/playlistitem_save_list"
+            style="@style/Text.Buttons.Responsive"
+            android:text="save list"
+            android:textSize="11sp"/>
+
+        <Button
+            android:id="@+id/playlistitem_clear_list"
+            style="@style/Text.Buttons.Responsive"
+            android:text="clear list"
+            android:textSize="11sp"/>
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/playlistitem_list_view"
+        style="@style/ScrollLayout">
+
+    </ListView>
+
+
+</LinearLayout>

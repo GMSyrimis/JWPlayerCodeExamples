@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/BackgroundLayout"
+    android:orientation="vertical"
+    tools:context=".activities.CaptionStyleActivity">
+
+    <ScrollView
+        style="@style/ScrollLayout"
+        android:layout_width="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                style="@style/FieldContainer"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/Text.FieldLabel"
+                    android:text="Font Size:" />
+
+                <EditText
+                    android:id="@+id/caption_style_font_size"
+                    style="@style/FieldPayload"
+                    android:hint="font size"
+                    android:inputType="number" />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/FieldContainer"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/Text.FieldLabel"
+                    android:text="Font Family:" />
+
+                <Spinner
+                    android:id="@+id/caption_style_font_family"
+                    style="@style/FieldPayload" />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/FieldContainer"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/Text.FieldLabel"
+                    android:text="Edge Style:" />
+
+                <Spinner
+                    android:id="@+id/caption_style_edge_style"
+                    style="@style/FieldPayload" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                style="@style/FieldContainer"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/Text.FieldLabel"
+                    android:text="Font Opacity:" />
+
+                <EditText
+                    android:id="@+id/caption_style_font_opacity"
+                    style="@style/FieldPayload"
+                    android:hint="font opacity"
+                    android:inputType="number" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                style="@style/FieldContainer"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/Text.FieldLabel"
+                    android:text="Font Color:" />
+
+                <EditText
+                    android:id="@+id/caption_style_font_color_hex"
+                    style="@style/FieldPayload"
+                    android:hint="#ffffff"
+                    android:inputType="text" />
+
+                <View
+                    android:id="@+id/caption_style_font_color_selector"
+                    style="@style/SquareButton"
+                    android:background="#ffffff" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/FieldContainer"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/Text.FieldLabel"
+                    android:text="Window Color:" />
+
+                <EditText
+                    android:id="@+id/caption_style_window_color_hex"
+                    style="@style/FieldPayload"
+                    android:hint="#ffffff"
+                    android:inputType="text" />
+
+                <View
+                    android:id="@+id/caption_style_window_color_selector"
+                    style="@style/SquareButton"
+                    android:background="#ffffff" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/FieldContainer"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/Text.FieldLabel"
+                    android:text="Window Opacity:" />
+
+                <EditText
+                    android:id="@+id/caption_style_window_opacity"
+                    style="@style/FieldPayload"
+                    android:hint="font opacity"
+                    android:inputType="number" />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/FieldContainer"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/Text.FieldLabel"
+                    android:text="Background Color:" />
+
+                <EditText
+                    android:id="@+id/caption_style_background_color_hex"
+                    style="@style/FieldPayload"
+                    android:hint="#ffffff"
+                    android:inputType="text" />
+
+                <View
+                    android:id="@+id/caption_style_background_color_selector"
+                    style="@style/SquareButton"
+                    android:background="#ffffff" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                style="@style/FieldContainer"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/Text.FieldLabel"
+                    android:text="Background Opacity:" />
+
+                <EditText
+                    android:id="@+id/caption_style_background_opacity"
+                    style="@style/FieldPayload"
+                    android:hint="background opacity"
+                    android:inputType="number" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/caption_style_save_btn"
+        style="@style/Text.Buttons.End"
+        android:text="save" />
+
+
+</LinearLayout>

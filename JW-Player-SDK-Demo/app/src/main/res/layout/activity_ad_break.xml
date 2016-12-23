@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/BackgroundLayout"
+    android:orientation="vertical">
+
+    <ScrollView style="@style/ScrollLayout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                style="@style/FieldContainer"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/Text.FieldLabel"
+                    android:text="Offset:" />
+
+                <com.gmsyrimis.jwplayer.views.JWAdBreakOffsetSpinner
+                    android:id="@+id/adbreak_offset_jwspinner"
+                    style="@style/FieldPayload" />
+
+                <Button
+                    android:id="@+id/adbreak_edit_label"
+                    style="@style/SquareButton.Edit" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                style="@style/FieldContainer"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/Text.FieldLabel"
+                    android:text="AdSource:" />
+
+                <Spinner
+                    android:id="@+id/adbreak_adsource"
+                    style="@style/FieldPayload" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                style="@style/FieldContainer"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/Text.ContainerTitle"
+                    android:text="Ads in waterfall:" />
+
+                <LinearLayout
+                    android:id="@+id/adbreak_tag_container"
+                    style="@style/FieldContainer"
+                    android:padding="10dp"
+                    android:orientation="vertical">
+
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/FieldContainer"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/Text.FieldLabel"
+                        android:text="Ad Url" />
+
+                    <EditText
+                        android:id="@+id/adbreak_ad_tag"
+                        style="@style/FieldPayload"
+                        android:hint="ad tag url"
+                        android:inputType="text" />
+
+                    <Button
+                        android:id="@+id/adbreak_qr_btn"
+                        style="@style/SquareButton.Qr" />
+
+                    <Button
+                        android:id="@+id/adbreak_add_tag_btn"
+                        style="@style/SquareButton.Add" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <CheckBox
+                android:id="@+id/adbreak_non_linear"
+                style="@style/Text.CheckBox"
+                android:checked="false"
+                android:text="isNonLinear" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/adbreak_new_btn"
+            style="@style/Text.Buttons.Responsive"
+            android:text="new"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/adbreak_add_btn"
+            style="@style/Text.Buttons.Responsive"
+            android:text="Add" />
+
+        <Button
+            android:id="@+id/adbreak_commit_btn"
+            style="@style/Text.Buttons.Responsive"
+            android:text="Commit"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/adbreak_edit_btn"
+            style="@style/Text.Buttons.Responsive"
+            android:text="edit"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/adbreak_load_list"
+            style="@style/Text.Buttons.Responsive"
+            android:text="load list" />
+
+        <Button
+            android:id="@+id/adbreak_save_list"
+            style="@style/Text.Buttons.Responsive"
+            android:text="save list" />
+
+        <Button
+            android:id="@+id/adbreak_clear_list"
+            style="@style/Text.Buttons.Responsive"
+            android:text="clear list" />
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/adbreak_list_view"
+        style="@style/ScrollLayout">
+    </ListView>
+
+    <Button
+        android:id="@+id/adbreak_set_list"
+        style="@style/Text.Buttons.End"
+        android:text="set schedule" />
+
+</LinearLayout>

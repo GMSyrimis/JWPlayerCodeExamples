@@ -1,0 +1,179 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
+    </style>
+
+    <style name="Text">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+
+    <style name="Text.CheckBox">
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_gravity">center_vertical</item>
+    </style>
+
+    <style name="Text.Content">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_margin">5dp</item>
+    </style>
+
+    <style name="Text.Content.Large">
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Text.CheckBox.ResponsiveHorizontal">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">50dp</item>
+    </style>
+
+
+    <style name="Text.Buttons">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:background">@drawable/custom_button_states</item>
+        <item name="android:layout_margin">5dp</item>
+    </style>
+
+    <style name="Text.Buttons.End">
+        <item name="android:layout_width">140dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">end</item>
+    </style>
+
+    <style name="Text.Buttons.Center">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="Text.ApiButtons">
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:background">@drawable/custom_button_states</item>
+    </style>
+
+    <style name="Text.Buttons.Responsive">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="FieldContainer">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@drawable/custom_button_shape</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:layout_margin">5dp</item>
+    </style>
+
+    <style name="FieldContainer.Api">
+        <item name="android:layout_margin">0dp</item>
+    </style>
+
+    <style name="ResponsiveLinearLayout">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_margin">5dp</item>
+    </style>
+
+    <style name="FieldPayload">
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="Text.FieldLabel">
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="SpinnerHeaderContainer">
+        <item name="android:layout_height">60dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:gravity">end</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="Text.ContainerTitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">5dp</item>
+
+    </style>
+
+    <style name="Text.SpinnerTitle">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:gravity">start</item>
+    </style>
+
+    <style name="SquareButton">
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_width">40dp</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="SquareButton.Qr">
+        <item name="android:background">@drawable/qr_btn</item>
+    </style>
+
+    <style name="SquareButton.Lcl">
+        <item name="android:background">@drawable/local_file_btn</item>
+    </style>
+
+    <style name="SquareButton.Edit">
+        <item name="android:background">@drawable/edit_btn</item>
+    </style>
+
+    <style name="SquareButton.Remove">
+        <item name="android:background">@drawable/remove_btn</item>
+    </style>
+
+    <style name="SquareButton.Add">
+        <item name="android:background">@drawable/add_btn</item>
+    </style>
+
+    <style name="SquareButton.Go">
+        <item name="android:background">@drawable/go_btn</item>
+    </style>
+
+    <style name="BackgroundLayout">
+        <item name="android:padding">5dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="ScrollLayout">
+        <item name="android:padding">5dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:background">@drawable/screen_border</item>
+    </style>
+
+</resources>

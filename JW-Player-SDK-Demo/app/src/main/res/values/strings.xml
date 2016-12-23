@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">JW Player</string>
+    <string name="drawer_open">Open drawer</string>
+    <string name="drawer_close">Close drawer</string>
+    <string name="player_config">PlayerConfig</string>
+    <string name="playlist_label">Playlist    %s</string>
+    <string name="free_key">LU1YxMC4UxGdVkYYl3ro3YtEyiUjJG6XMhxM7w==</string>
+</resources>

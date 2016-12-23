@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center"
+              android:layout_margin="10dp"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/share_dialog_player_version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="Player Version"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="Description"/>
+
+        <EditText
+            android:id="@+id/share_dialog_description"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:inputType="text|textCapSentences"/>
+
+        <CheckBox
+            android:id="@+id/share_dialog_player_config"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="include player config"/>
+
+        <CheckBox
+            android:id="@+id/share_dialog_callbacks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="include callback log"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:gravity="end"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/share_cancel_btn"
+            style="@style/Text.Buttons.Responsive"
+            android:text="cancel"/>
+
+        <Button
+            android:id="@+id/share_send_btn"
+            style="@style/Text.Buttons.Responsive"
+            android:text="send"/>
+
+        <Button
+            android:id="@+id/share_web_test"
+            style="@style/Text.Buttons.Responsive"
+            android:text="web test"/>
+    </LinearLayout>
+
+</LinearLayout>

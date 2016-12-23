@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.PlaylistItemActivityTest">
+
+    <LinearLayout
+        style="@style/BackgroundLayout"
+        android:orientation="vertical"
+        >
+
+        <ScrollView style="@style/ScrollLayout">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    style="@style/FieldContainer"
+                    android:orientation="vertical">
+
+                    <LinearLayout style="@style/SpinnerHeaderContainer">
+
+                        <TextView
+                            style="@style/Text.SpinnerTitle"
+                            android:text="File:"/>
+
+                        <Button
+                            android:id="@+id/playlistitem_jw_spinner_qr"
+                            style="@style/SquareButton.Qr"/>
+
+                        <Button
+                            android:id="@+id/playlistitem_jw_spinner_lcl"
+                            style="@style/SquareButton.Lcl"/>
+
+                        <Button
+                            android:id="@+id/playlistitem_jw_spinner_add"
+                            style="@style/SquareButton.Add"/>
+
+                        <Button
+                            android:id="@+id/playlistitem_jw_spinner_edit"
+                            style="@style/SquareButton.Edit"/>
+
+                        <Button
+                            android:id="@+id/playlistitem_jw_spinner_remove"
+                            style="@style/SquareButton.Remove"/>
+                    </LinearLayout>
+
+                    <com.gmsyrimis.jwplayer.views.JWSpinner
+                        android:id="@+id/playlistitem_jw_file_spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_margin="5dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/FieldContainer"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/Text.FieldLabel"
+                        android:text="Image:"/>
+
+                    <EditText
+                        android:id="@+id/playlistitem_image_et"
+                        style="@style/FieldPayload"
+                        android:hint=".setImage()"
+                        android:inputType="text"/>
+
+                    <Button
+                        android:id="@+id/playlistitem_image_qr"
+                        style="@style/SquareButton.Qr"/>
+
+                    <Button
+                        android:id="@+id/playlistitem_image_lcl"
+                        style="@style/SquareButton.Lcl"/>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    style="@style/FieldContainer"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/Text.FieldLabel"
+                        android:text="Title:"/>
+
+                    <EditText
+                        android:id="@+id/playlistitem_title_et"
+                        style="@style/FieldPayload"
+                        android:hint=".setTitle()"
+                        android:inputType="text"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/FieldContainer"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/Text.FieldLabel"
+                        android:text="Description:"/>
+
+                    <EditText
+                        android:id="@+id/playlistitem_description_et"
+                        style="@style/FieldPayload"
+                        android:hint=".setDescription()"
+                        android:inputType="text"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/FieldContainer"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/Text.FieldLabel"
+                        android:text="MediaID:"/>
+
+                    <EditText
+                        android:id="@+id/playlistitem_mediaid_et"
+                        style="@style/FieldPayload"
+                        android:hint=".setMediaID()"
+                        android:inputType="text"/>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/playlistitem_drm_container"
+                    style="@style/FieldContainer"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/Text.FieldLabel"
+                        android:text="DRM Server:"/>
+
+                    <EditText
+                        android:id="@+id/playlistitem_drm_et"
+                        style="@style/FieldPayload"
+                        android:hint="url"
+                        android:inputType="text"/>
+
+                    <Button
+                        android:id="@+id/playlistitem_drm_qr"
+                        style="@style/SquareButton.Qr"/>
+
+                </LinearLayout>
+
+                <com.gmsyrimis.jwplayer.views.HttpHeadersView
+                    android:id="@+id/playlistitem_http_headers_view"
+                    style="@style/FieldContainer"
+                    android:orientation="vertical"/>
+
+                <LinearLayout
+                    style="@style/FieldContainer"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        style="@style/ResponsiveLinearLayout"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/Text.ContainerTitle"
+                            android:text="Sources:"/>
+
+                        <LinearLayout
+                            android:id="@+id/playlistitem_sources_container"
+                            style="@style/FieldContainer"
+                            android:orientation="vertical"
+                            android:padding="10dp">
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/playlistitem_edit_sources_btn"
+                        style="@style/SquareButton.Add"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/FieldContainer"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        style="@style/ResponsiveLinearLayout"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/Text.ContainerTitle"
+                            android:text="Captions:"/>
+
+                        <LinearLayout
+                            android:id="@+id/playlistitem_captions_container"
+                            style="@style/FieldContainer"
+                            android:orientation="vertical"
+                            android:padding="10dp">
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/playlistitem_edit_captions_btn"
+                        style="@style/SquareButton.Add"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/FieldContainer"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        style="@style/ResponsiveLinearLayout"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/Text.ContainerTitle"
+                            android:text="Ad Schedule:"/>
+
+                        <LinearLayout
+                            android:id="@+id/playlistitem_ads_container"
+                            style="@style/FieldContainer"
+                            android:orientation="vertical"
+                            android:padding="10dp">
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/playlistitem_edit_ads_btn"
+                        style="@style/SquareButton.Add"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/playlistitem_new_btn"
+                style="@style/Text.Buttons.Responsive"
+                android:text="new"
+                android:visibility="gone"/>
+
+            <Button
+                android:id="@+id/playlistitem_add_btn"
+                style="@style/Text.Buttons.Responsive"
+                android:text="Add"/>
+
+            <Button
+                android:id="@+id/playlistitem_commit_btn"
+                style="@style/Text.Buttons.Responsive"
+                android:text="Commit"
+                android:visibility="gone"/>
+
+            <Button
+                android:id="@+id/playlistitem_edit_btn"
+                style="@style/Text.Buttons.Responsive"
+                android:text="edit"
+                android:visibility="gone"/>
+
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/playlistitem_set_list"
+            style="@style/Text.Buttons.End"
+            android:text="Set Playlist"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/left_drawer"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="#f3f3f3"
+        android:choiceMode="singleChoice"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0dp"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/playlistitem_load_list"
+                style="@style/Text.Buttons.Responsive"
+                android:textSize="11sp"
+                android:text="load list"/>
+
+            <Button
+                android:id="@+id/playlistitem_save_list"
+                style="@style/Text.Buttons.Responsive"
+                android:textSize="11sp"
+                android:text="save list"/>
+
+            <Button
+                android:id="@+id/playlistitem_clear_list"
+                style="@style/Text.Buttons.Responsive"
+                android:textSize="11sp"
+                android:text="clear list"/>
+
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/playlistitem_list_view"
+            style="@style/ScrollLayout">
+
+        </ListView>
+    </LinearLayout>
+
+</android.support.v4.widget.DrawerLayout>

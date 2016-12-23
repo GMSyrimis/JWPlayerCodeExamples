@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              style="@style/BackgroundLayout"
+              android:orientation="vertical"
+              tools:context=".activities.ImaAdvertisingActivity">
+
+
+    <ScrollView style="@style/ScrollLayout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                style="@style/FieldContainer"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/Text.FieldLabel"
+                    android:text="Max Redirects:"/>
+
+                <EditText
+                    android:id="@+id/ima_advertising_max_redirects"
+                    style="@style/FieldPayload"
+                    android:hint="setMaxRedirects()"
+                    android:inputType="number"/>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/FieldContainer"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/Text.FieldLabel"
+                    android:text="Language:"/>
+
+                <EditText
+                    android:id="@+id/ima_advertising_language"
+                    style="@style/FieldPayload"
+                    android:hint="setLanguage()"
+                    android:inputType="text"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                style="@style/FieldContainer"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/Text.FieldLabel"
+                    android:text="Ppid:"/>
+
+                <EditText
+                    android:id="@+id/ima_advertising_ppid"
+                    style="@style/FieldPayload"
+                    android:hint="setPpid()"
+                    android:inputType="text"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                style="@style/FieldContainer"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/Text.FieldLabel"
+                    android:text="Player Version:"/>
+
+                <EditText
+                    android:id="@+id/ima_advertising_player_version"
+                    style="@style/FieldPayload"
+                    android:hint="setPlayerVersion()"
+                    android:inputType="text"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/FieldContainer"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/Text.FieldLabel"
+                    android:text="Player Type:"/>
+
+                <EditText
+                    android:id="@+id/ima_advertising_player_type"
+                    style="@style/FieldPayload"
+                    android:hint="setPlayerType()"
+                    android:inputType="text"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/FieldContainer"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/Text.FieldLabel"
+                    android:text="VMAP Ad Url:"/>
+
+                <EditText
+                    android:id="@+id/ima_advertising_vmap_url"
+                    style="@style/FieldPayload"
+                    android:hint="VMAP url"
+                    android:inputType="text"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/FieldContainer"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/ima_advertising_autoplay_ads"
+                    style="@style/Text.CheckBox"
+                    android:checked="true"
+                    android:text="Autoplay ad breaks"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/FieldContainer"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/ima_advertising_restrict"
+                    style="@style/Text.CheckBox"
+                    android:checked="true"
+                    android:text="Restrict to custom player"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/advertising_edit_ad_schedule"
+        style="@style/Text.Buttons.Center"
+        android:text="edit Ad Schedule"/>
+
+    <TextView
+        style="@style/Text.ContainerTitle"
+        android:text="Current Ad Schedule:"/>
+
+    <ListView
+        android:id="@+id/advertising_ad_schedule_lv"
+        style="@style/ScrollLayout"></ListView>
+
+    <Button
+        android:id="@+id/advertising_set_advertising"
+        style="@style/Text.Buttons.End"
+        android:text="set advertising"/>
+
+
+</LinearLayout>

@@ -1,0 +1,265 @@
+package com.gmsyrimis.jwplayer.activities;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.Toast;
+
+import com.google.ads.interactivemedia.v3.api.ImaSdkSettings;
+import com.gmsyrimis.jwplayer.JWApplication;
+import com.gmsyrimis.jwplayer.R;
+import com.gmsyrimis.jwplayer.custom.JWActivity;
+import com.gmsyrimis.jwplayer.utilities.Utils;
+import com.longtailvideo.jwplayer.media.ads.AdBreak;
+import com.longtailvideo.jwplayer.media.ads.AdvertisingBase;
+import com.longtailvideo.jwplayer.media.ads.ImaAdvertising;
+import com.longtailvideo.jwplayer.media.ads.ImaVMAPAdvertising;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static com.gmsyrimis.jwplayer.JWApplication.master_config;
+
+public class ImaAdvertisingActivity extends JWActivity<AdvertisingBase> {
+
+    // Objects to be returned
+    private ImaVMAPAdvertising mImaVmapAdvertising;
+    private ImaAdvertising mImaAdvertising;
+    private ImaSdkSettings mImaSdkSettings;
+
+    // List View
+    private ListView mAdScheduleListView;
+    private ArrayList<String> mAdScheduleLabels;
+    private ArrayAdapter<String> mAdScheduleAdapter;
+
+    // ImaSdkSettings
+    private EditText mMaxRedirectsEditText;
+    private EditText mLanguageEditText;
+    private EditText mPpidEditText;
+    private EditText mPlayerVersionEditText;
+    private EditText mPlayerTypeEditText;
+    private CheckBox mAutoplayAds;
+    private CheckBox mRestrictCustomPlayer;
+
+    private EditText mVmapUrlEditText;
+    private Button mEditAdScheduleBtn;
+
+    private Button mSaveBtn;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_ima_advertising);
+        getSupportActionBar().setTitle("IMA Advertising");
+
+        initDataStructures();
+
+        mVmapUrlEditText = (EditText) findViewById(R.id.ima_advertising_vmap_url);
+
+        // ImaSdkSettings
+        mMaxRedirectsEditText = (EditText) findViewById(R.id.ima_advertising_max_redirects);
+        mLanguageEditText = (EditText) findViewById(R.id.ima_advertising_language);
+        mPpidEditText = (EditText) findViewById(R.id.ima_advertising_ppid);
+        mPlayerVersionEditText = (EditText) findViewById(R.id.ima_advertising_player_version);
+        mPlayerTypeEditText = (EditText) findViewById(R.id.ima_advertising_player_type);
+        mAutoplayAds = (CheckBox) findViewById(R.id.ima_advertising_autoplay_ads);
+        mRestrictCustomPlayer = (CheckBox) findViewById(R.id.ima_advertising_restrict);
+
+        mAdScheduleListView = (ListView) findViewById(R.id.advertising_ad_schedule_lv);
+        setupListView();
+
+        parseObject(master_config.getAdvertising());
+
+        mEditAdScheduleBtn = (Button) findViewById(R.id.advertising_edit_ad_schedule);
+        mEditAdScheduleBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent returnIntent = new Intent(getApplicationContext(), AdBreakActivity.class);
+                returnIntent.putExtra(JWApplication.IS_PLAYLIST_ITEM, false);
+                startActivityForResult(returnIntent, JWApplication.AD_BREAK_ACTIVITY);
+            }
+        });
+
+        mSaveBtn = (Button) findViewById(R.id.advertising_set_advertising);
+        mSaveBtn.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View v) {
+                                            parseScreen();
+                                        }
+                                    }
+        );
+
+    }
+
+
+    private void setupListView() {
+        mAdScheduleAdapter = new ArrayAdapter<>(
+                this,
+                android.R.layout.simple_list_item_1,
+                mAdScheduleLabels);
+        mAdScheduleListView.setAdapter(mAdScheduleAdapter);
+    }
+
+    private ImaAdvertising setImaAdvertising() {
+        List<AdBreak> adBreakList = new ArrayList<>();
+        for (String current : mAdScheduleLabels) {
+            try {
+                adBreakList.add(AdBreak.parseJson(current));
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+        mImaAdvertising.setSchedule(adBreakList);
+        mImaAdvertising.setImaSdkSettings(parseScreenSettings());
+        return mImaAdvertising;
+    }
+
+    private ImaVMAPAdvertising setImaVMAPAdvertising() {
+        mImaVmapAdvertising.setTag(Utils.getStringData(mVmapUrlEditText));
+        mImaVmapAdvertising.setImaSdkSettings(parseScreenSettings());
+        return mImaVmapAdvertising;
+    }
+
+    private ImaSdkSettings parseScreenSettings() {
+        mImaSdkSettings.setMaxRedirects((Utils.getIntegerData(mMaxRedirectsEditText) == null) ? -1 : Utils.getIntegerData(mMaxRedirectsEditText));
+        mImaSdkSettings.setLanguage((Utils.getStringData(mLanguageEditText) == null) ? "en" : Utils.getStringData(mLanguageEditText));
+        mImaSdkSettings.setPpid(Utils.getStringData(mPpidEditText));
+        mImaSdkSettings.setPlayerVersion(Utils.getStringData(mPlayerVersionEditText));
+        mImaSdkSettings.setPlayerType(Utils.getStringData(mPlayerTypeEditText));
+        mImaSdkSettings.setAutoPlayAdBreaks(mAutoplayAds.isChecked());
+        mImaSdkSettings.setRestrictToCustomPlayer(mRestrictCustomPlayer.isChecked());
+        return mImaSdkSettings;
+    }
+
+    private void parserObjectSettings(ImaSdkSettings settings) {
+        mMaxRedirectsEditText.setText(Utils.handleObjectData(settings.getMaxRedirects()));
+        mLanguageEditText.setText(Utils.handleObjectData(settings.getLanguage()));
+        mPpidEditText.setText(Utils.handleObjectData(settings.getPpid()));
+        mPlayerVersionEditText.setText(Utils.handleObjectData(settings.getPlayerVersion()));
+        mPlayerTypeEditText.setText(Utils.handleObjectData(settings.getPlayerType()));
+        mAutoplayAds.setChecked(settings.getAutoPlayAdBreaks());
+        mRestrictCustomPlayer.setChecked(settings.doesRestrictToCustomPlayer());
+    }
+
+    @Override
+    protected void initDataStructures() {
+        List<AdBreak> dummySchedule = new ArrayList<>();
+        mImaSdkSettings = new ImaSdkSettings();
+        mImaAdvertising = new ImaAdvertising(dummySchedule, mImaSdkSettings);
+        mImaVmapAdvertising = new ImaVMAPAdvertising("", mImaSdkSettings);
+        // mAdBreakLabels to be filled in depending on intent or result
+        mAdScheduleLabels = new ArrayList<>();
+    }
+
+    @Override
+    protected void handleIntent(Intent intent) {
+        // Used to handle the playeconfig
+    }
+
+    @Override
+    protected void parseObject(AdvertisingBase object) {
+        // Get AdvertisingBase
+        if (object != null) {
+            // Check instance of
+            if (object instanceof ImaAdvertising) {
+                mImaAdvertising = (ImaAdvertising) object;
+                mImaSdkSettings = mImaAdvertising.getImaSdkSettings();
+                parserObjectSettings(mImaSdkSettings);
+
+                // Translate data into string for list view row
+                List<AdBreak> adBreakList = mImaAdvertising.getSchedule();
+                for (AdBreak current : adBreakList) {
+                    mAdScheduleLabels.add(current.toJson().toString());
+                }
+            } else if (object instanceof ImaVMAPAdvertising) {
+                mImaVmapAdvertising = (ImaVMAPAdvertising) object;
+                mImaSdkSettings = mImaAdvertising.getImaSdkSettings();
+                parserObjectSettings(mImaSdkSettings);
+                mVmapUrlEditText.setText(Utils.handleObjectData(mImaVmapAdvertising.getTag()));
+
+            } else {
+                parserObjectSettings(mImaSdkSettings);
+            }
+        }
+
+    }
+
+    @Override
+    protected AdvertisingBase parseScreen() {
+        // Unusable due to split case and AdvertisingBase not retaining info
+
+        boolean hasVMAP = !mVmapUrlEditText.getText().toString().isEmpty();
+        boolean hasAdSchedule = !mAdScheduleLabels.isEmpty();
+
+        if (hasAdSchedule && hasVMAP) {
+            Toast.makeText(ImaAdvertisingActivity.this, "Cannot set VMAP and AdSchedule", Toast.LENGTH_SHORT).show();
+        }
+
+//        TODO how can we set the advertising to null?
+//        if (!hasVMAP && !hasAdSchedule) {
+//            master_config.setAdvertising(null);
+//            Intent returnIntent = new Intent();
+//            setResult(Activity.RESULT_OK, returnIntent);
+//            finish();
+//        }
+
+        if (!hasVMAP && !hasAdSchedule) {
+            List<AdBreak> emptyList = new ArrayList<>();
+            mImaAdvertising.setSchedule(emptyList);
+            mImaAdvertising.setImaSdkSettings(parseScreenSettings());
+            master_config.setAdvertising(mImaAdvertising);
+            Intent returnIntent = new Intent();
+            setResult(Activity.RESULT_OK, returnIntent);
+            finish();
+        }
+
+        if (hasAdSchedule) {
+            master_config.setAdvertising(setImaAdvertising());
+            Intent returnIntent = new Intent();
+            setResult(Activity.RESULT_OK, returnIntent);
+            finish();
+        }
+
+        if (hasVMAP) {
+            master_config.setAdvertising(setImaVMAPAdvertising());
+            Intent returnIntent = new Intent();
+            setResult(Activity.RESULT_OK, returnIntent);
+            finish();
+        }
+        return null;
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == JWApplication.AD_BREAK_ACTIVITY) {
+            if (resultCode == Activity.RESULT_OK) {
+                if (mAdScheduleLabels.size() > 0) {
+                    mAdScheduleLabels.clear();
+                }
+                String result = data.getStringExtra(JWApplication.RESULT);
+                try {
+                    JSONArray jsonArray = new JSONArray(result);
+                    for (int i = 0; i < jsonArray.length(); i++) {
+                        JSONObject current = (JSONObject) jsonArray.get(i);
+                        mAdScheduleLabels.add(current.toString());
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                mAdScheduleAdapter.notifyDataSetChanged();
+            }
+        }
+    }
+
+}
