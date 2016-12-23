@@ -80,17 +80,28 @@ public class PlaylistArrayAdapterTest extends ArrayAdapter<PlaylistItem> {
 
 
         ImageView posterImage = (ImageView) convertView.findViewById(R.id.playlist_row_image);
-        Picasso.with(mContext).load(currentItem.getImage()).into(posterImage);
+        String image = currentItem.getImage();
+        if (image != null) {
+            Picasso.with(mContext).load(image).into(posterImage);
+        }
 
         TextView title = (TextView) convertView.findViewById(R.id.playlist_row_title);
+        String titleString = currentItem.getTitle();
+        if (titleString !=null){
+            title.setText((titleString.length() > 9) ? titleString.substring(0, 6) + "..." : titleString);
+        }
 
-        title.setText((currentItem.getTitle().length() > 9) ? currentItem.getTitle().substring(0, 6) + "..." : currentItem.getTitle());
+
         if (mFont != null) {
             title.setTypeface(mFont);
         }
 
         TextView description = (TextView) convertView.findViewById(R.id.playlist_row_description);
-        description.setText((currentItem.getDescription().length() > 14) ? currentItem.getDescription().substring(0, 11) + "..." : currentItem.getDescription());
+        String descriptionString = currentItem.getDescription();
+        if (descriptionString!=null){
+            description.setText((descriptionString.length() > 14) ? descriptionString.substring(0, 11) + "..." : descriptionString);
+        }
+
         if (mFont != null) {
             description.setTypeface(mFont);
         }
