@@ -17,7 +17,6 @@ import android.widget.Toast;
 
 import com.gmsyrimis.jwplayer.JWApplication;
 import com.gmsyrimis.jwplayer.R;
-import com.gmsyrimis.jwplayer.activities.QrActivity;
 import com.gmsyrimis.jwplayer.custom.EditClickListener;
 import com.gmsyrimis.jwplayer.custom.JWActivity;
 import com.gmsyrimis.jwplayer.utilities.Utils;

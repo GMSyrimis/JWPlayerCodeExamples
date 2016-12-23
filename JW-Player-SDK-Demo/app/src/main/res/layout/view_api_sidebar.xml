@@ -57,24 +57,6 @@
                 android:layout_marginTop="10dp"
                 android:text="stop()" />
 
-            <!--<Button-->
-            <!--android:id="@+id/on_pause_btn"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="onPause()" />-->
-
-            <!--<Button-->
-            <!--android:id="@+id/on_resume_btn"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="onResume()" />-->
-
-            <!--<Button-->
-            <!--android:id="@+id/on_destroy_btn"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="onDestroy()" />-->
-
             <TextView
                 style="@style/Text.ContainerTitle"
                 android:text="load()" />
@@ -169,53 +151,53 @@
 
             </LinearLayout>
 
+<!--TODO uncomment if you have an ads license key-->
+            <!--<TextView-->
+                <!--style="@style/Text.ContainerTitle"-->
+                <!--android:text="playAd()" />-->
 
-            <TextView
-                style="@style/Text.ContainerTitle"
-                android:text="playAd()" />
+            <!--<LinearLayout-->
+                <!--style="@style/FieldContainer.Api"-->
+                <!--android:orientation="vertical">-->
 
-            <LinearLayout
-                style="@style/FieldContainer.Api"
-                android:orientation="vertical">
+                <!--<LinearLayout style="@style/SpinnerHeaderContainer">-->
 
-                <LinearLayout style="@style/SpinnerHeaderContainer">
+                    <!--<Button-->
+                        <!--android:id="@+id/play_ad_qr"-->
+                        <!--style="@style/SquareButton.Qr" />-->
 
-                    <Button
-                        android:id="@+id/play_ad_qr"
-                        style="@style/SquareButton.Qr" />
+                    <!--<Button-->
+                        <!--android:id="@+id/play_ad_add"-->
+                        <!--style="@style/SquareButton.Add" />-->
 
-                    <Button
-                        android:id="@+id/play_ad_add"
-                        style="@style/SquareButton.Add" />
+                    <!--<Button-->
+                        <!--android:id="@+id/play_ad_edit"-->
+                        <!--style="@style/SquareButton.Edit" />-->
 
-                    <Button
-                        android:id="@+id/play_ad_edit"
-                        style="@style/SquareButton.Edit" />
+                    <!--<Button-->
+                        <!--android:id="@+id/play_ad_remove"-->
+                        <!--style="@style/SquareButton.Remove" />-->
 
-                    <Button
-                        android:id="@+id/play_ad_remove"
-                        style="@style/SquareButton.Remove" />
+                <!--</LinearLayout>-->
 
-                </LinearLayout>
+                <!--<LinearLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:orientation="horizontal">-->
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    <!--<com.gmsyrimis.jwplayer.views.JWSpinner-->
+                        <!--android:id="@+id/play_ad_spinner"-->
+                        <!--android:layout_width="0dp"-->
+                        <!--android:layout_height="50dp"-->
+                        <!--android:layout_weight="1" />-->
 
-                    <com.gmsyrimis.jwplayer.views.JWSpinner
-                        android:id="@+id/play_ad_spinner"
-                        android:layout_width="0dp"
-                        android:layout_height="50dp"
-                        android:layout_weight="1" />
-
-                    <Button
-                        android:id="@+id/play_ad_go"
-                        style="@style/SquareButton.Go" />
-                </LinearLayout>
+                    <!--<Button-->
+                        <!--android:id="@+id/play_ad_go"-->
+                        <!--style="@style/SquareButton.Go" />-->
+                <!--</LinearLayout>-->
 
 
-            </LinearLayout>
+            <!--</LinearLayout>-->
 
             <TextView
                 style="@style/Text.ContainerTitle"

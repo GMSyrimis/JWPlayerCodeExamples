@@ -32,6 +32,7 @@ import static com.gmsyrimis.jwplayer.JWApplication.master_config;
 
 public class ImaAdvertisingActivity extends JWActivity<AdvertisingBase> {
 
+// TODO rename to .java if you have an Ads license key
     // Objects to be returned
     private ImaVMAPAdvertising mImaVmapAdvertising;
     private ImaAdvertising mImaAdvertising;

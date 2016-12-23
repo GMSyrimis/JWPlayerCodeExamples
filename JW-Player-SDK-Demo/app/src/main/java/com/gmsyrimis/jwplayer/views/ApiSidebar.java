@@ -23,7 +23,6 @@ import com.gmsyrimis.jwplayer.custom.QrClickListener;
 import com.gmsyrimis.jwplayer.custom.RemoveEntryClickListener;
 import com.gmsyrimis.jwplayer.custom.TextDialogClickListener;
 import com.gmsyrimis.jwplayer.custom.ToastClickListener;
-import com.gmsyrimis.jwplayer.providers.PlayAdProvider;
 import com.gmsyrimis.jwplayer.providers.PlayerConfigProvider;
 import com.gmsyrimis.jwplayer.providers.PlaylistItemProvider;
 import com.gmsyrimis.jwplayer.providers.SkinProvider;
@@ -440,14 +439,6 @@ public class ApiSidebar extends LinearLayout {
         mSkinSkinSpinner.setAdapter(adapter);
         mSkinSkinSpinner.setSelection(0, false);
 
-//        mSkinSkinSpinner.setOnItemSelectedListener(new ToastItemSelectedListener(mActivity, mDrawerLayout, mDrawerList) {
-//            @Override
-//            public String setMessage(int index) {
-//                String skinName = mSkinProvider.labels.get(index);
-//                mPlayerView.setSkin(Skin.valueOf(skinName));
-//                return "Skin: " + skinName;
-//            }
-//        });
 
         Button goBtn = (Button) findViewById(R.id.skin_skin_go);
         goBtn.setOnClickListener(new ToastClickListener(mActivity, mDrawerLayout, mDrawerList) {
@@ -492,17 +483,7 @@ public class ApiSidebar extends LinearLayout {
         mSkinStringSpinner.load();
 
         mSkinStringSpinner.setSelection(0, false);
-//        mSkinStringSpinner.setOnItemSelectedListener(new ToastItemSelectedListener(mActivity, mDrawerLayout, mDrawerList) {
-//            @Override
-//            public String setMessage(int index) {
-//                String payload = mSkinStringSpinner.getPayloadAt(index);
-//                if (payload != null) {
-//                    mPlayerView.setSkin(payload);
-//                    return "Skin: " + payload;
-//                }
-//                return "Please select a valid skin";
-//            }
-//        });
+
 
         Button goBtn = (Button) findViewById(R.id.set_skin_string_go);
         goBtn.setOnClickListener(new ToastClickListener(mActivity, mDrawerLayout, mDrawerList) {
@@ -543,19 +524,21 @@ public class ApiSidebar extends LinearLayout {
 
     }
 
-    private void setupAdsSpinner() {
-        mPlayAdSpinner = (com.gmsyrimis.jwplayer.views.JWSpinner) findViewById(R.id.play_ad_spinner);
-        mPlayAdSpinner.initialize(JWApplication.MAIN_PLAY_AD_URLS, new PlayAdProvider());
-
-        // UPDATE DATA FROM PREFERENCES
-        mPlayAdSpinner.load();
-
-        mPlayAdSpinner.setSelection(0, false);
+//    TODO uncomment if you have an ads license key
+//    private void setupAdsSpinner() {
+//        mPlayAdSpinner = (com.gmsyrimis.jwplayer.views.JWSpinner) findViewById(R.id.play_ad_spinner);
+//        mPlayAdSpinner.initialize(JWApplication.MAIN_PLAY_AD_URLS, new PlayAdProvider());
 //
-//        mPlayAdSpinner.setOnItemSelectedListener(new ToastItemSelectedListener(mActivity, mDrawerLayout, mDrawerList) {
+//        // UPDATE DATA FROM PREFERENCES
+//        mPlayAdSpinner.load();
+//
+//        mPlayAdSpinner.setSelection(0, false);
+//
+//        Button goBtn = (Button) findViewById(R.id.play_ad_go);
+//        goBtn.setOnClickListener(new ToastClickListener(mActivity, mDrawerLayout, mDrawerList) {
 //            @Override
-//            public String setMessage(int index) {
-//                String payload = mPlayAdSpinner.getPayloadAt(index);
+//            public String setMessage() {
+//                String payload = mPlayAdSpinner.getPayloadAt(mPlayAdSpinner.getSelectedItemPosition());
 //                if (payload != null) {
 //                    mPlayerView.playAd(payload);
 //                    return payload;
@@ -563,33 +546,20 @@ public class ApiSidebar extends LinearLayout {
 //                return "Please select a valid ad";
 //            }
 //        });
-
-        Button goBtn = (Button) findViewById(R.id.play_ad_go);
-        goBtn.setOnClickListener(new ToastClickListener(mActivity, mDrawerLayout, mDrawerList) {
-            @Override
-            public String setMessage() {
-                String payload = mPlayAdSpinner.getPayloadAt(mPlayAdSpinner.getSelectedItemPosition());
-                if (payload != null) {
-                    mPlayerView.playAd(payload);
-                    return payload;
-                }
-                return "Please select a valid ad";
-            }
-        });
-
-        Button qr = (Button) findViewById(R.id.play_ad_qr);
-        qr.setOnClickListener(new QrClickListener(mActivity, JWApplication.QR_PLAY_AD_URL));
-
-
-        Button add = (Button) findViewById(R.id.play_ad_add);
-        add.setOnClickListener(new AddEntryClickListener(mActivity, mPlayAdSpinner));
-
-        Button remove = (Button) findViewById(R.id.play_ad_remove);
-        remove.setOnClickListener(new RemoveEntryClickListener(mPlayAdSpinner));
-
-        Button edit = (Button) findViewById(R.id.play_ad_edit);
-        edit.setOnClickListener(new EditClickListener(mPlayAdSpinner, mActivity));
-    }
+//
+//        Button qr = (Button) findViewById(R.id.play_ad_qr);
+//        qr.setOnClickListener(new QrClickListener(mActivity, JWApplication.QR_PLAY_AD_URL));
+//
+//
+//        Button add = (Button) findViewById(R.id.play_ad_add);
+//        add.setOnClickListener(new AddEntryClickListener(mActivity, mPlayAdSpinner));
+//
+//        Button remove = (Button) findViewById(R.id.play_ad_remove);
+//        remove.setOnClickListener(new RemoveEntryClickListener(mPlayAdSpinner));
+//
+//        Button edit = (Button) findViewById(R.id.play_ad_edit);
+//        edit.setOnClickListener(new EditClickListener(mPlayAdSpinner, mActivity));
+//    }
 
 
     private void setupPlayerConfigSpinner() {
@@ -602,18 +572,6 @@ public class ApiSidebar extends LinearLayout {
 
         mPlayerConfigSpinner.setSelection(0, false);
 
-//        mPlayerConfigSpinner.setOnItemSelectedListener(new TextDialogItemSelectedListener(mActivity, mDrawerLayout, mDrawerList) {
-//            @Override
-//            public String setMessage(int index) {
-//                String payload = mPlayerConfigSpinner.getPayloadAt(index);
-//                if (payload != null) {
-//                    master_config = PlayerConfig.parseJson(payload);
-//                    mPlayerView.setup(master_config);
-//                    return handleJSON(master_config.toJson());
-//                }
-//                return "Please select a valid config";
-//            }
-//        });
 
         Button goBtn = (Button) findViewById(R.id.player_config_go);
         goBtn.setOnClickListener(new TextDialogClickListener(mActivity, mDrawerLayout, mDrawerList) {
