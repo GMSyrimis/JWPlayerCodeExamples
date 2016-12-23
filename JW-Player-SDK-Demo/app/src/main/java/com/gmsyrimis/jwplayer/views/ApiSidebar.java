@@ -126,7 +126,8 @@ public class ApiSidebar extends LinearLayout {
         setupPauseSpinner();
         setupLoadSpinner();
         setupPlayerConfigSpinner();
-        setupAdsSpinner();
+        // TODO Uncomment if you have a license key that can play Ads
+//        setupAdsSpinner();
         setupSkinSkinSpinner();
         setupSkinString();
 
@@ -165,7 +166,7 @@ public class ApiSidebar extends LinearLayout {
         setupDestroySurface();
         setupInitializeSurface();
         setupPlayListItem();
-//        TODO setWindowOpenHandler
+//        TODO setWindowOpenHandler maybe this can be part of the callbacks screen
 //        mPlayerView.setWindowOpenHandler(null);
 
     }

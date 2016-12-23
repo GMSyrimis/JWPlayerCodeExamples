@@ -209,31 +209,33 @@
                         style="@style/SquareButton.Add"/>
                 </LinearLayout>
 
-                <LinearLayout
-                    style="@style/FieldContainer"
-                    android:orientation="horizontal">
+                <!--        TODO Uncomment if you have a license key that can play Ads-->
 
-                    <LinearLayout
-                        style="@style/ResponsiveLinearLayout"
-                        android:orientation="vertical">
+                <!--<LinearLayout-->
+                    <!--style="@style/FieldContainer"-->
+                    <!--android:orientation="horizontal">-->
 
-                        <TextView
-                            style="@style/Text.ContainerTitle"
-                            android:text="Ad Schedule:"/>
+                    <!--<LinearLayout-->
+                        <!--style="@style/ResponsiveLinearLayout"-->
+                        <!--android:orientation="vertical">-->
 
-                        <LinearLayout
-                            android:id="@+id/playlistitem_ads_container"
-                            style="@style/FieldContainer"
-                            android:orientation="vertical"
-                            android:padding="10dp">
+                        <!--<TextView-->
+                            <!--style="@style/Text.ContainerTitle"-->
+                            <!--android:text="Ad Schedule:"/>-->
 
-                        </LinearLayout>
-                    </LinearLayout>
+                        <!--<LinearLayout-->
+                            <!--android:id="@+id/playlistitem_ads_container"-->
+                            <!--style="@style/FieldContainer"-->
+                            <!--android:orientation="vertical"-->
+                            <!--android:padding="10dp">-->
 
-                    <Button
-                        android:id="@+id/playlistitem_edit_ads_btn"
-                        style="@style/SquareButton.Add"/>
-                </LinearLayout>
+                        <!--</LinearLayout>-->
+                    <!--</LinearLayout>-->
+
+                    <!--<Button-->
+                        <!--android:id="@+id/playlistitem_edit_ads_btn"-->
+                        <!--style="@style/SquareButton.Add"/>-->
+                <!--</LinearLayout>-->
 
             </LinearLayout>
         </ScrollView>

@@ -135,33 +135,35 @@
                 style="@style/Text.Buttons"
                 android:text="Related"/>
 
-            <LinearLayout
-                style="@style/FieldContainer"
-                android:orientation="vertical">
+            <!--        TODO Uncomment if you have a license key that can play Ads-->
 
-                <TextView
-                    style="@style/Text.ContainerTitle"
-                    android:text="Playlist Advertising:"/>
+            <!--<LinearLayout-->
+            <!--style="@style/FieldContainer"-->
+            <!--android:orientation="vertical">-->
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+            <!--<TextView-->
+            <!--style="@style/Text.ContainerTitle"-->
+            <!--android:text="Playlist Advertising:"/>-->
 
-                    <Button
-                        android:id="@+id/config_advertising_vast"
-                        style="@style/Text.Buttons.Responsive"
-                        android:text="Vast"/>
+            <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="horizontal">-->
 
-                    <Button
-                        android:id="@+id/config_advertising_ima"
-                        style="@style/Text.Buttons.Responsive"
-                        android:text="ima"/>
+            <!--<Button-->
+            <!--android:id="@+id/config_advertising_vast"-->
+            <!--style="@style/Text.Buttons.Responsive"-->
+            <!--android:text="Vast"/>-->
 
-                </LinearLayout>
+            <!--<Button-->
+            <!--android:id="@+id/config_advertising_ima"-->
+            <!--style="@style/Text.Buttons.Responsive"-->
+            <!--android:text="ima"/>-->
+
+            <!--</LinearLayout>-->
 
 
-            </LinearLayout>
+            <!--</LinearLayout>-->
 
             <Button
                 android:id="@+id/config_captions"

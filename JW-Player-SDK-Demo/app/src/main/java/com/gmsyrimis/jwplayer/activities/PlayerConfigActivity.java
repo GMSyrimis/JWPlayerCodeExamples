@@ -25,6 +25,7 @@ import com.gmsyrimis.jwplayer.utilities.Utils;
 import com.gmsyrimis.jwplayer.views.JWSpinner;
 import com.longtailvideo.jwplayer.configuration.PlayerConfig;
 
+import static android.R.attr.key;
 import static com.gmsyrimis.jwplayer.JWApplication.LICENSE_KEY;
 import static com.gmsyrimis.jwplayer.JWApplication.master_config;
 
@@ -65,8 +66,9 @@ public class PlayerConfigActivity extends JWActivity<PlayerConfig> {
         setupControlsConfig();
 
         setupPlaylistConfig();
-        setupVastAdvertisingConfig();
-        setupImaAdvertisingConfig();
+        // TODO Uncomment if you have a license key that can play Ads
+//        setupVastAdvertisingConfig();
+//        setupImaAdvertisingConfig();
         setupCaptionStylingConfig();
         setupLogoConfig();
         setupRelatedConfig();
@@ -172,27 +174,30 @@ public class PlayerConfigActivity extends JWActivity<PlayerConfig> {
         });
     }
 
-    private void setupVastAdvertisingConfig() {
-        Button advertising = (Button) findViewById(R.id.config_advertising_vast);
-        advertising.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(), com.gmsyrimis.jwplayer.activities.VastAdvertisingActivity.class);
-                startActivityForResult(i, JWApplication.VAST_ADVERTISING_ACTIVITY);
-            }
-        });
-    }
+    // TODO Uncomment if you have a license key that can play Ads
 
-    private void setupImaAdvertisingConfig() {
-        Button advertising = (Button) findViewById(R.id.config_advertising_ima);
-        advertising.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(), ImaAdvertisingActivity.class);
-                startActivityForResult(i, JWApplication.IMA_ADVERTISING_ACTIVITY);
-            }
-        });
-    }
+//    private void setupVastAdvertisingConfig() {
+//        Button advertising = (Button) findViewById(R.id.config_advertising_vast);
+//        advertising.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent i = new Intent(getApplicationContext(), com.gmsyrimis.jwplayer.activities.VastAdvertisingActivity.class);
+//                startActivityForResult(i, JWApplication.VAST_ADVERTISING_ACTIVITY);
+//            }
+//        });
+//    }
+
+    // TODO Uncomment if you have a license key that can play Ads
+//    private void setupImaAdvertisingConfig() {
+//        Button advertising = (Button) findViewById(R.id.config_advertising_ima);
+//        advertising.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent i = new Intent(getApplicationContext(), ImaAdvertisingActivity.class);
+//                startActivityForResult(i, JWApplication.IMA_ADVERTISING_ACTIVITY);
+//            }
+//        });
+//    }
 
     private void setupCaptionStylingConfig() {
         Button captionStyling = (Button) findViewById(R.id.config_captions);

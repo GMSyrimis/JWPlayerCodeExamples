@@ -33,7 +33,6 @@ import com.gmsyrimis.jwplayer.providers.FileUrlProvider;
 import com.gmsyrimis.jwplayer.utilities.Utils;
 import com.gmsyrimis.jwplayer.views.HttpHeadersView;
 import com.gmsyrimis.jwplayer.views.JWSpinner;
-import com.longtailvideo.jwplayer.media.ads.AdBreak;
 import com.longtailvideo.jwplayer.media.captions.Caption;
 import com.longtailvideo.jwplayer.media.playlists.MediaSource;
 import com.longtailvideo.jwplayer.media.playlists.PlaylistItem;
@@ -64,7 +63,8 @@ public class PlaylistItemActivityTest extends JWActivity<PlaylistItem> {
     private LinearLayout mSourcesContainer;
     private LinearLayout mCaptionsContainer;
 
-    private LinearLayout mAdsContainer;
+    // TODO Uncomment if you have a license key that can play Ads
+//    private LinearLayout mAdsContainer;
 
     private Button mAddToPlaylistBtn;
     private Button mEditBtn;
@@ -115,8 +115,9 @@ public class PlaylistItemActivityTest extends JWActivity<PlaylistItem> {
                 R.id.playlistitem_image_et,
                 R.id.playlistitem_image_qr,
                 R.id.playlistitem_image_lcl,
-                R.id.playlistitem_ads_container,
-                R.id.playlistitem_edit_ads_btn,
+                // TODO Uncomment if you have a license key that can play Ads
+//                R.id.playlistitem_ads_container,
+//                R.id.playlistitem_edit_ads_btn,
                 R.id.playlistitem_sources_container,
                 R.id.playlistitem_edit_sources_btn,
                 R.id.playlistitem_captions_container,
@@ -133,7 +134,9 @@ public class PlaylistItemActivityTest extends JWActivity<PlaylistItem> {
         mHttpHeadersView = (HttpHeadersView) findViewById(R.id.playlistitem_http_headers_view);
         mHttpHeadersView.initialize(this);
 
-        setupAds();
+        // TODO Uncomment if you have a license key that can play Ads
+//        setupAds();
+
         setupSources();
         setupCaptions();
 
@@ -248,19 +251,21 @@ public class PlaylistItemActivityTest extends JWActivity<PlaylistItem> {
         });
     }
 
-    private void setupAds() {
-        mAdsContainer = (LinearLayout) findViewById(R.id.playlistitem_ads_container);
-        Button editAdsBtn = (Button) findViewById(R.id.playlistitem_edit_ads_btn);
-        editAdsBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent returnIntent = new Intent(getApplicationContext(), AdBreakActivity.class);
-                returnIntent.putExtra(JWApplication.IS_PLAYLIST_ITEM, true);
-                returnIntent.putExtra(JWApplication.PLAYLIST_ITEM_INDEX, mCurrentItemSelected);
-                startActivityForResult(returnIntent, JWApplication.AD_BREAK_ACTIVITY);
-            }
-        });
-    }
+    // TODO Uncomment if you have a license key that can play Ads
+
+//    private void setupAds() {
+//        mAdsContainer = (LinearLayout) findViewById(R.id.playlistitem_ads_container);
+//        Button editAdsBtn = (Button) findViewById(R.id.playlistitem_edit_ads_btn);
+//        editAdsBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent returnIntent = new Intent(getApplicationContext(), AdBreakActivity.class);
+//                returnIntent.putExtra(JWApplication.IS_PLAYLIST_ITEM, true);
+//                returnIntent.putExtra(JWApplication.PLAYLIST_ITEM_INDEX, mCurrentItemSelected);
+//                startActivityForResult(returnIntent, JWApplication.AD_BREAK_ACTIVITY);
+//            }
+//        });
+//    }
 
     private void setupSources() {
         mSourcesContainer = (LinearLayout) findViewById(R.id.playlistitem_sources_container);
@@ -469,23 +474,24 @@ public class PlaylistItemActivityTest extends JWActivity<PlaylistItem> {
             }
 
             // Get ad schedule
-            if (mAdsContainer.getChildCount() == 1) {
-                TextView tv = (TextView) mAdsContainer.getChildAt(0);
-                String ads = tv.getText().toString();
-                try {
-                    JSONArray jsonArray = new JSONArray(ads);
-                    List<AdBreak> adBreakList = new ArrayList<>();
-                    for (int i = 0; i < jsonArray.length(); i++) {
-                        AdBreak current = AdBreak.parseJson(jsonArray.getJSONObject(i));
-                        adBreakList.add(current);
-                    }
-                    playlistItem.setAdSchedule(adBreakList);
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            } else {
-                playlistItem.setAdSchedule(null);
-            }
+            // TODO Uncomment if you have a license key that can play Ads
+//            if (mAdsContainer.getChildCount() == 1) {
+//                TextView tv = (TextView) mAdsContainer.getChildAt(0);
+//                String ads = tv.getText().toString();
+//                try {
+//                    JSONArray jsonArray = new JSONArray(ads);
+//                    List<AdBreak> adBreakList = new ArrayList<>();
+//                    for (int i = 0; i < jsonArray.length(); i++) {
+//                        AdBreak current = AdBreak.parseJson(jsonArray.getJSONObject(i));
+//                        adBreakList.add(current);
+//                    }
+//                    playlistItem.setAdSchedule(adBreakList);
+//                } catch (JSONException e) {
+//                    e.printStackTrace();
+//                }
+//            } else {
+//                playlistItem.setAdSchedule(null);
+//            }
 
             // Get mCaptions
             if (mCaptionsContainer.getChildCount() == 1) {
@@ -534,25 +540,25 @@ public class PlaylistItemActivityTest extends JWActivity<PlaylistItem> {
             }
         }
 
-
-        if (object.getAdSchedule() != null) {
-            JSONArray jsonArray = new JSONArray();
-            for (AdBreak current : object.getAdSchedule()) {
-                jsonArray.put(current.toJson());
-            }
-            if (mAdsContainer.getChildCount() == 0) {
-                TextView textView = new TextView(getApplicationContext());
-                textView.setText(jsonArray.toString());
-                mAdsContainer.addView(textView);
-            } else {
-                mAdsContainer.removeAllViews();
-                TextView textView = new TextView(getApplicationContext());
-                textView.setText(jsonArray.toString());
-                mAdsContainer.addView(textView);
-            }
-        } else {
-            mAdsContainer.removeAllViews();
-        }
+        // TODO Uncomment if you have a license key that can play Ads
+//        if (object.getAdSchedule() != null) {
+//            JSONArray jsonArray = new JSONArray();
+//            for (AdBreak current : object.getAdSchedule()) {
+//                jsonArray.put(current.toJson());
+//            }
+//            if (mAdsContainer.getChildCount() == 0) {
+//                TextView textView = new TextView(getApplicationContext());
+//                textView.setText(jsonArray.toString());
+//                mAdsContainer.addView(textView);
+//            } else {
+//                mAdsContainer.removeAllViews();
+//                TextView textView = new TextView(getApplicationContext());
+//                textView.setText(jsonArray.toString());
+//                mAdsContainer.addView(textView);
+//            }
+//        } else {
+//            mAdsContainer.removeAllViews();
+//        }
 
         if (object.getSources() != null) {
             JSONArray jsonArray = new JSONArray();
@@ -654,23 +660,26 @@ public class PlaylistItemActivityTest extends JWActivity<PlaylistItem> {
                 String path = "file://" + Utils.getImagePathFromURI(this, data.getData());
                 mImageET.setText(path);
 
-            } else if (requestCode == JWApplication.AD_BREAK_ACTIVITY) {
-                if (mAdsContainer.getChildCount() > 0) {
-                    mAdsContainer.removeAllViews();
-                }
-                String result = data.getStringExtra(JWApplication.RESULT);
-                try {
-                    JSONArray jsonArray = new JSONArray(result);
-                    if (jsonArray.length() > 0) {
-                        TextView textView = new TextView(getApplicationContext());
-                        textView.setText(result);
-                        mAdsContainer.addView(textView);
-                    }
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-
-            } else if (requestCode == JWApplication.CAPTION_ACTIVITY) {
+            }
+            // TODO Uncomment if you have a license key that can play Ads
+//            else if (requestCode == JWApplication.AD_BREAK_ACTIVITY) {
+//                if (mAdsContainer.getChildCount() > 0) {
+//                    mAdsContainer.removeAllViews();
+//                }
+//                String result = data.getStringExtra(JWApplication.RESULT);
+//                try {
+//                    JSONArray jsonArray = new JSONArray(result);
+//                    if (jsonArray.length() > 0) {
+//                        TextView textView = new TextView(getApplicationContext());
+//                        textView.setText(result);
+//                        mAdsContainer.addView(textView);
+//                    }
+//                } catch (JSONException e) {
+//                    e.printStackTrace();
+//                }
+//
+//            }
+            else if (requestCode == JWApplication.CAPTION_ACTIVITY) {
                 if (mCaptionsContainer.getChildCount() > 0) {
                     mCaptionsContainer.removeAllViews();
                 }

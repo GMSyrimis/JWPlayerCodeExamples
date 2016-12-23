@@ -33,9 +33,6 @@ import com.longtailvideo.jwplayer.cast.CastManager;
 import com.longtailvideo.jwplayer.configuration.PlayerConfig;
 import com.longtailvideo.jwplayer.configuration.Skin;
 import com.longtailvideo.jwplayer.events.listeners.VideoPlayerEvents;
-import com.longtailvideo.jwplayer.media.ads.AdBreak;
-import com.longtailvideo.jwplayer.media.ads.AdSource;
-import com.longtailvideo.jwplayer.media.ads.Advertising;
 import com.longtailvideo.jwplayer.media.playlists.PlaylistItem;
 
 import java.util.ArrayList;
@@ -84,13 +81,14 @@ public class MainActivity extends AppCompatActivity implements
         mActionBar = getSupportActionBar();
         if (mActionBar != null) {
             mActionBar.setDisplayHomeAsUpEnabled(true);
-            mActionBar.setTitle("Android Bishop QA");
+            mActionBar.setTitle(getString(R.string.app_name));
         }
     }
 
     private PlayerConfig updateConfig() {
-        List<AdBreak> emptyAdList = new ArrayList<>();
-        Advertising advertising = new Advertising(AdSource.VAST, emptyAdList);
+//        TODO Uncomment if you have a license key that can play Ads
+//        List<AdBreak> emptyAdList = new ArrayList<>();
+//        Advertising advertising = new Advertising(AdSource.VAST, emptyAdList);
 
         List<PlaylistItem> playlist = new ArrayList<>();
         PlaylistItem video = new PlaylistItem("http://content.jwplatform.com/manifests/njFhMDbi.m3u8");
@@ -103,7 +101,8 @@ public class MainActivity extends AppCompatActivity implements
         // create config
         master_config = new PlayerConfig.Builder()
                 .playlist(playlist)
-                .advertising(advertising)
+                //        TODO Uncomment if you have a license key that can play Ads
+//                .advertising(advertising)
                 .skin(Skin.FIVE)
                 .skinBackground("")
                 .skinActive("")
@@ -149,12 +148,12 @@ public class MainActivity extends AppCompatActivity implements
                 R.drawable.menu, R.string.drawer_open,
                 R.string.drawer_close) {
             public void onDrawerClosed(View view) {
-                mActionBar.setTitle("Android Bishop QA");
+                mActionBar.setTitle(getString(R.string.app_name));
                 invalidateOptionsMenu();
             }
 
             public void onDrawerOpened(View drawerView) {
-                mActionBar.setTitle("API Calls");
+                mActionBar.setTitle("JWPlayerView API");
                 invalidateOptionsMenu();
             }
         };
