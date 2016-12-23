@@ -205,7 +205,7 @@ public class ImaAdvertisingActivity extends JWActivity<AdvertisingBase> {
             Toast.makeText(ImaAdvertisingActivity.this, "Cannot set VMAP and AdSchedule", Toast.LENGTH_SHORT).show();
         }
 
-//        TODO how can we set the advertising to null?
+//        TODO how can we set the advertising to null? since the conditions below are for empty ads
 //        if (!hasVMAP && !hasAdSchedule) {
 //            master_config.setAdvertising(null);
 //            Intent returnIntent = new Intent();

@@ -106,7 +106,7 @@ public class CaptionActivity extends JWActivity<Caption> {
                 Intent getIntent = new Intent(Intent.ACTION_GET_CONTENT);
                 getIntent.setType("*/*");
                 getIntent.addCategory(Intent.CATEGORY_OPENABLE);
-                // TODO this is technically wrong
+                // TODO I feel this is wrong
 //                Intent pickIntent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Files.getContentUri("external"));
 //
 //                pickIntent.setType("*/*");

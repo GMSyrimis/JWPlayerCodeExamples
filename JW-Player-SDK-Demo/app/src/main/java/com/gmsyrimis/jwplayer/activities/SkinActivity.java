@@ -74,9 +74,6 @@ public class SkinActivity extends JWActivity<PlayerConfig> implements HSLFragmen
         mSkinSkinSpinner.setAdapter(mSkinAdapter);
 
 
-        // TODO PlayerConfig is missing a setSkin(Skin) public method
-
-
         mSkinName = (EditText) findViewById(R.id.skin_name);
         mSkinUrl = (EditText) findViewById(R.id.skin_url);
         mSkinUrlQr = (Button) findViewById(R.id.skin_url_qr);

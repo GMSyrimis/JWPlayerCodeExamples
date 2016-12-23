@@ -114,7 +114,7 @@ public class ApiSidebar extends LinearLayout {
     }
 
 
-    // TODO I suppose this can't be shared by inheritance but should be constant
+    // TODO I suppose initialize can't be shared by inheritance but all custom views should have it
     public void initialize(AppCompatActivity activity, JWPlayerView jwPlayerView, DrawerLayout drawerLayout) {
 
         mActivity = activity;
@@ -166,7 +166,7 @@ public class ApiSidebar extends LinearLayout {
         setupDestroySurface();
         setupInitializeSurface();
         setupPlayListItem();
-//        TODO setWindowOpenHandler maybe this can be part of the callbacks screen
+//        TODO maybe setWindowOpenHandler can be part of the callbacks screen
 //        mPlayerView.setWindowOpenHandler(null);
 
     }
@@ -396,7 +396,7 @@ public class ApiSidebar extends LinearLayout {
         Button qr = (Button) findViewById(R.id.load_qr);
         qr.setOnClickListener(new QrClickListener(mActivity, JWApplication.QR_PLAYLIST_ITEM));
 
-        // TODO refactor local video selection
+        // TODO refactor local video selection we now have a click listener for this
         Button lcl = (Button) findViewById(R.id.load_lcl);
         lcl.setOnClickListener(new View.OnClickListener() {
             @Override

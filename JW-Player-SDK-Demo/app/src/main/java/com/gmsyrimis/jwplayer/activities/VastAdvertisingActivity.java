@@ -99,31 +99,6 @@ public class VastAdvertisingActivity extends JWActivity<AdvertisingBase> {
 
         );
 
-        // TODO new classes were added
-//        ImaAdvertising imaAdvertising = new ImaAdvertising();
-
-//        ImaVMAPAdvertising imaVMAPAdvertising = new ImaVMAPAdvertising();
-//        ImaSdkSettings settings = new ImaSdkSettings();
-//        settings.setPlayerType(); No need to use this method
-//        settings.setAutoPlayAdBreaks();
-//        settings.setLanguage();
-//        settings.setMaxRedirects();
-//        settings.setPpid();
-//        settings.setRestrictToCustomPlayer(); No need to use this method
-//        settings.setPlayerVersion(); No need to use this method
-//        settings.doesRestrictToCustomPlayer();
-
-//        settings.getAutoPlayAdBreaks();
-//        settings.getLanguage();
-//        settings.getMaxRedirects();
-//        settings.getPlayerType();
-//        settings.getPpid();
-//        settings.getPlayerVersion();
-
-
-
-
-
     }
 
     private void setupAdSourceSpinner() {
